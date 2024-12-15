@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganap - Event Planner</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+
+</head>
+
+<body>
+    
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Ganap</h1>
+                <p>Event Planner</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Ganap</h2>
+            <p>Your ultimate event planning partner. Organize events seamlessly with us!</p>
+            <a href="#" class="cta-btn">Get Started</a>
+        </div>
+    </section>
+
+    <section class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <div class="event-list">
+            {% for event in events %}
+                <div class="event-item">
+                    <h3>{{ event.title }}</h3>
+                    <p>{{ event.date }} | {{ event.time }}</p>
+                    <p>{{ event.location }}</p>
+                    <a href="#">Learn More</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ganap. All rights reserved.</p>
+    </footer>
+</body>
+</html>
